@@ -1,0 +1,53 @@
+) MOBILE APP DEVELOPMENT WITH DEPLOYMENT AND MONETIZATION STRATEGIES
+activity_main.xml:
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="My First Publish App"     
+android:textSize="24sp"
+        android:textStyle="bold"        android:layout_width="wrap_content"        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/button"
+        android:text="Click Me"
+       android:layout_width="wrap_content"    android:layout_height="wrap_content"/>
+</LinearLayout>
+
+MainActivity.java:
+package com.example.publishapp;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+public class MainActivity extends AppCompatActivity {
+    Button btn;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        btn = findViewById(R.id.button);
+        btn.setOnClickListener(v ->
+                Toast.makeText(this, "App Ready for Deployment 🚀", Toast.LENGTH_SHORT).show()
+        );
+    }
+}
+Android manifest.xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.publishapp">
+
+    <application
+        android:allowBackup="true"
+        android:label="Publish App"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest> 
